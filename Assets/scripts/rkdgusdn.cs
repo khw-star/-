@@ -14,12 +14,31 @@ public class rkdgusdn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("게임 시작");            //유니티 디버그에 메세지를 출력
+        //Debug.Log("게임 시작");            //유니티 디버그에 메세지를 출력
+
+        if (gold > 50)
+        {
+            Debug.Log("아이템을 구매할 수 있습니다. ");
+        }
+        else if (gold > 25)                     //glod가 50보단 적지만 25보단 클때
+        { 
+            Debug.Log("일부 아이템을 구매할 수 있습니다. ");
+        }
+        else
+        { 
+            Debug.Log("돈이 부족합니다.");    
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("게임 진행중"); 
+        //Debug.Log("게임 진행중"); 
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            gold = gold + 10;
+            Debug.Log("현재 골드 : " + gold);
+        }
     }
 }
